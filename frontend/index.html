@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container ">
+            <a class="navbar-brand fw-bold" href="#">URL Shortener</a>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Input Box -->
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Shorten Your URL</h5>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="longUrl" placeholder="Enter your URL here">
+                        </div>
+                        <div class="d-grid">
+                            <button class="btn btn-primary">Shorten URL</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Display Shortened URLs -->
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-8">
+                <h4 class="text-center">Shortened URLs</h4>
+                <table class="table table-bordered table-striped bg-white shadow-sm">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>Original URL</th>
+                            <th>Shortened URL</th>
+                            <th>Copy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>https://example.com/very-long-url</td>
+                            <td><a href="#" class="text-primary">short.ly/abcd</a></td>
+                            <td><button class="btn btn-sm btn-outline-secondary">Copy</button></td>
+                        </tr>
+                        <!-- More rows will be added dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional, required for some Bootstrap components) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
