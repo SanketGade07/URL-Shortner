@@ -21,9 +21,9 @@ mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopo
 
 app.use('/', require('./routes/urlRoutes'));
 
-app.get('/',(req,res)=>{
-    res.send('url shortner backend server');
-})
+// app.get('/',(req,res)=>{
+//     res.send('url shortner backend server');
+// })
 
 // Serve static files (Frontend)
 app.use(express.static(path.join(__dirname, '../frontend/public')));
