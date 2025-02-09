@@ -5,7 +5,7 @@ const URL=require('../models/url');
 
 router.post('/shorten', async (req, res) => {
     const shortCode = generateRandomString();
-    const shortUrl = `http://localhost:5000/${shortCode}`; // This will be returned to the user
+    const shortUrl = `https://url-shortner-n1wo3fwis-sankets-projects-c62cae48.vercel.app/${shortCode}`; // This will be returned to the user
     const longUrl = req.body.url;
 
     try {
