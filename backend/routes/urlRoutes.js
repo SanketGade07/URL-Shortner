@@ -1,11 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const URL=require('../models/url');
+require('dotenv').config();
 
 
 router.post('/shorten', async (req, res) => {
     const shortCode = generateRandomString();
-    const shortUrl = `https://url-shortner-n1wo3fwis-sankets-projects-c62cae48.vercel.app/${shortCode}`; // This will be returned to the user
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+    const shortUrl = `${baseUrl}/${shortCode}`; // This will be returned to the user
     const longUrl = req.body.url;
 
     try {
