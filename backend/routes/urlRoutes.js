@@ -3,10 +3,6 @@ const router = express.Router();
 const URL=require('../models/url');
 require('dotenv').config();
 
-router.get('/env-check', (req, res) => {
-    res.json({envVar: process.env.NEXT_PUBLIC_API_URL});
-});
-
 
 router.post('/shorten', async (req, res) => {
     const shortCode = generateRandomString();
