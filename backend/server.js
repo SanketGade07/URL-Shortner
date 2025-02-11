@@ -26,11 +26,11 @@ app.use('/', require('./routes/urlRoutes'));
 // })
 
 // Serve static files (Frontend)
-app.use(express.static(path.join(__dirname, '../frontend/public')));
+app.use(express.static(path.join(__dirname, 'frontend/public')));
 
 // Fallback to index.html for SPA
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/public/index.html'));
+    res.sendFile(path.join(__dirname, 'frontend/public/index.html'));
 });
 
 app.listen(5000, ()=>{
