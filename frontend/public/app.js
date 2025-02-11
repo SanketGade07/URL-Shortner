@@ -11,7 +11,7 @@ async function shortenUrl() {
 
     const baseUrl = isLocalhost 
         ? "http://localhost:5000"    // Local development (covers both localhost and 127.x.x.x)
-        : "https://your-vercel-site.vercel.app"; // Production (Vercel)
+        : "https://url-shortner-nine-beta.vercel.app"; // Production (Vercel)
 
     const url = document.getElementById('longUrl').value;
 
