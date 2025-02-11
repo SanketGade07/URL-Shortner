@@ -3,10 +3,15 @@ const router = express.Router();
 const URL=require('../models/url');
 require('dotenv').config();
 
+router.get('/env-check', (req, res) => {
+    res.json({envVar: process.env.NEXT_PUBLIC_API_URL});
+});
+
 
 router.post('/shorten', async (req, res) => {
     const shortCode = generateRandomString();
     const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+
     const shortUrl = `${baseUrl}/${shortCode}`; // This will be returned to the user
     const longUrl = req.body.url;
 
