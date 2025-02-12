@@ -1,4 +1,5 @@
-// import { renderUrls } from "./views/renderUrls.js";
+import { renderUrls } from "./views/renderUrls.js";
+import { addToUrls } from "./views/renderUrls.js";
 
 async function shortenUrl() {   
     const isLocalhost = window.location.hostname === "localhost" || window.location.hostname.startsWith("127.");
@@ -17,8 +18,8 @@ async function shortenUrl() {
         body: JSON.stringify({longUrl})
     });
     const url= await response.json();
-    console.log(url);
-    // renderUrls(url);
+    addToUrls(url);
+    renderUrls();
      
     }
     document.querySelector('.js-short-url-btn').addEventListener('click', shortenUrl);
