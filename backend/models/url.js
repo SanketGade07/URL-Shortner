@@ -22,6 +22,11 @@ const urlSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
+  shortUrl: {               // Add this field
+    type: String,
+    required: true,
+    unique: true
+  },
   clickCount: {
     type: Number,
     default: 0           // To track the number of times the short URL is accessed

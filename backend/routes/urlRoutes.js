@@ -9,16 +9,23 @@ router.post('/shorten', async (req, res) => {
     const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
     const shortUrl = `${baseUrl}/${shortCode}`; // This will be returned to the user
-    const longUrl = req.body.url;
+    const longUrl = req.body.longUrl;
+    //   // Basic URL validation
+    //   const urlPattern = /^(https?:\/\/)[\w.-]+\.[a-z]{2,}.*$/;
+    // if (!urlPattern.test(longUrl)) {
+    //     return res.status(400).json({ error: 'Invalid URL format' });
+    // }
+
 
     try {
         const url = new URL({
             originalUrl: longUrl,
-            shortCode: shortCode 
+            shortCode: shortCode,
+            shortUrl:shortUrl 
         });
 
         await url.save();
-        res.json({ shortUrl }); // Return the short URL to the client
+        res.json(url); // Return the short URL to the client
     } catch (e) {
         console.error('Error saving URL:', e);
         res.status(500).json({ error: 'Server error while saving URL' });
