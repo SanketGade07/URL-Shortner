@@ -18,8 +18,8 @@
       "dest": "/frontend/public/index.html"
     },
     {
-      "src": "/views/renderUrls.js",
-      "dest": "/frontend/public/views/renderUrls.js"
+      "src": "/components/renderUrls.js",
+      "dest": "/frontend/public/components/renderUrls.js"
     },
     {
       "src": "/(.*)",
