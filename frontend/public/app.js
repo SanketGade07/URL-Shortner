@@ -1,5 +1,5 @@
-import { renderUrls } from "./views/renderUrls.js";
-import { addToUrls } from "./views/renderUrls.js";
+import { renderUrls } from "./components/renderUrls.js";
+import { addToUrls } from "./components/renderUrls.js";
 
 async function shortenUrl() {   
     const isLocalhost = window.location.hostname === "localhost" || window.location.hostname.startsWith("127.");
