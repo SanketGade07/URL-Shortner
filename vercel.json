@@ -22,6 +22,14 @@
       "dest": "/frontend/public/components/renderUrls.js"
     },
     {
+      "src": "/auth/login.html",
+      "dest": "/frontend/public/auth/login.html"
+    },
+    {
+      "src": "/auth/signup.html",
+      "dest": "/frontend/public/auth/signup.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/backend/server.js"
     },
