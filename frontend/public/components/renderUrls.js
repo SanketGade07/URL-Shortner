@@ -4,7 +4,8 @@ const urls=[
  export function addToUrls(url){
     urls.unshift({
         longUrl:url.originalUrl,
-        shortUrl:url.shortUrl
+        shortUrl:url.shortUrl,
+        shortCode:url.shortCode
     });
  }
 
@@ -17,7 +18,7 @@ export function renderUrls(){
         html+=`
         <tr>
             <td>${url.longUrl}</td>
-            <td><a href="https://url-shortner-nine-beta.vercel.app/olZvfr" class="text-primary">${url.shortUrl}</a></td>
+            <td><a href="https://url-shortner-nine-beta.vercel.app/${url.shortCode}" class="text-primary">${url.shortUrl}</a></td>
             <td><button class="btn btn-sm btn-outline-secondary">Copy</button></td>
         </tr>
         `
