@@ -35,6 +35,10 @@
     },
     {
       "src": "/(.*)",
+      "dest": "/backend/server.js"
+    },
+    {
+      "src": "/(.*)",
       "dest": "/frontend/public/$1"
     },
     {
