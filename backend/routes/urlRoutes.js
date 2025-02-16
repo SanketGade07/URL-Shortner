@@ -10,12 +10,14 @@ router.post('/shorten', async (req, res) => {
 
     const shortUrl = `${baseUrl}/${shortCode}`; // This will be returned to the user
     const longUrl = req.body.longUrl;
+    console.log('API Base URL:', baseUrl);
+
     //   // Basic URL validation
     //   const urlPattern = /^(https?:\/\/)[\w.-]+\.[a-z]{2,}.*$/;
     // if (!urlPattern.test(longUrl)) {
     //     return res.status(400).json({ error: 'Invalid URL format' });
     // }
-
+ 
 
     try {
         const url = new URL({
@@ -25,29 +27,11 @@ router.post('/shorten', async (req, res) => {
         });
 
         await url.save();
+        console.log(url);
         res.json(url); // Return the short URL to the client
     } catch (e) {
         console.error('Error saving URL:', e);
         res.status(500).json({ error: 'Server error while saving URL' });
-    }
-});
-
-
-router.get('/:shortCode',async (req,res) => {
-    try{
-        const {shortCode}= req.params;
-       
-        const urlData = await URL.findOne({shortCode:shortCode});
-        
-        if(urlData){
-            
-            res.redirect(urlData.originalUrl);
-        }else{
-            res.status(404).send('short URL not found')
-        }
-    }catch(e){
-        console.error(e);
-        res.status(500).send('Server Error');
     }
 });
 
