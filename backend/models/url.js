@@ -30,6 +30,10 @@ const urlSchema = new mongoose.Schema({
   clickCount: {
     type: Number,
     default: 0           // To track the number of times the short URL is accessed
+  },
+  user: {                           // New field to associate URL with a user
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'                      // Reference to the User model
   }
 });
 
