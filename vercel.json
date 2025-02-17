@@ -30,7 +30,7 @@
       "dest": "/frontend/public/auth/signup.html"
     },
     {
-      "src": "/(.*)",
+      "src": "/api/(.*)",
       "dest": "/backend/server.js"
     },
     {
