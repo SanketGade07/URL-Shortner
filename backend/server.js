@@ -20,19 +20,6 @@ mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopo
 
 
 
-app.use('/api', require('./routes/urlRoutes'));
-
-// app.get('/',(req,res)=>{
-//     res.send('url shortner backend server');
-// })
-
-
-
-// Serve static files (Frontend)
-app.use(express.static(path.join(__dirname, '../frontend/public')));
-
-
-
 app.get('/:shortCode',async (req,res) => {
     try{
         const {shortCode}= req.params;
@@ -49,6 +36,19 @@ app.get('/:shortCode',async (req,res) => {
         res.status(500).send('Server Error');
     }
 });
+
+app.use('/api', require('./routes/urlRoutes'));
+
+// app.get('/',(req,res)=>{
+//     res.send('url shortner backend server');
+// })
+
+
+
+// Serve static files (Frontend)
+app.use(express.static(path.join(__dirname, '../frontend/public')));
+
+
 
 // Fallback to index.html for SPA
 app.get('*', (req, res) => {
