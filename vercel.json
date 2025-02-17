@@ -10,6 +10,9 @@
       "dest": "/backend/server.js"
     },
     {
+      "handle": "filesystem"
+    },
+    {
       "src": "/app.js",
       "dest": "/frontend/public/app.js"
     },
@@ -36,13 +39,6 @@
     {
       "src": "/(.*)",
       "dest": "/frontend/public/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/backend/server.js"
-    },
-    {
-      "handle": "filesystem"
     }
   ]
 }
