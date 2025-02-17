@@ -6,6 +6,10 @@
   ],
   "routes": [
     {
+      "src": "/api/(.*)",
+      "dest": "/backend/server.js"
+    },
+    {
       "src": "/app.js",
       "dest": "/frontend/public/app.js"
     },
@@ -30,12 +34,12 @@
       "dest": "/frontend/public/auth/signup.html"
     },
     {
-      "src": "/api/(.*)",
-      "dest": "/backend/server.js"
+      "src": "/(.*)",
+      "dest": "/frontend/public/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "/frontend/public/$1"
+      "dest": "/backend/server.js"
     },
     {
       "handle": "filesystem"
