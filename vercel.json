@@ -9,7 +9,10 @@
       "src": "/(.*)",
       "dest": "/backend/server.js"
     },
-  
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/public/$1"
+    },
     {
       "src": "/app.js",
       "dest": "/frontend/public/app.js"
@@ -34,10 +37,7 @@
       "src": "/auth/signup.html",
       "dest": "/frontend/public/auth/signup.html"
     },
-    {
-      "src": "/(.*)",
-      "dest": "/frontend/public/$1"
-    },
+    
     {
       "handle": "filesystem"
     }
