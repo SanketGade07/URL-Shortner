@@ -15,6 +15,7 @@
     },
     {
       "src": "/app.js",
+      "headers": { "Content-Type": "application/javascript" },
       "dest": "/frontend/public/app.js"
     },
     {
