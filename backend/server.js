@@ -39,9 +39,6 @@ app.get('/:shortCode',async (req,res) => {
 
 app.use('/api', require('./routes/urlRoutes'));
 
-// app.get('/',(req,res)=>{
-//     res.send('url shortner backend server');
-// })
 
 
 
@@ -57,6 +54,11 @@ app.get('*', (req, res) => {
 
 
 
-app.listen(5000, ()=>{
-    console.log(`Server is running on port 5000`);
-});
+// Check if running locally
+if (require.main === module) {
+    app.listen(5000, () => console.log("Server running on http://localhost:5000"));
+  }
+  
+  // Export for Vercel
+  module.exports = app;
+  

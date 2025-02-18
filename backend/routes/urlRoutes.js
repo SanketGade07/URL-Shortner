@@ -12,13 +12,6 @@ router.post('/shorten', async (req, res) => {
     const longUrl = req.body.longUrl;
     console.log('API Base URL:', baseUrl);
 
-    //   // Basic URL validation
-    //   const urlPattern = /^(https?:\/\/)[\w.-]+\.[a-z]{2,}.*$/;
-    // if (!urlPattern.test(longUrl)) {
-    //     return res.status(400).json({ error: 'Invalid URL format' });
-    // }
- 
-
     try {
         const url = new URL({
             originalUrl: longUrl,
