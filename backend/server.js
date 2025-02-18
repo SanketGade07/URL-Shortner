@@ -37,7 +37,7 @@ app.get('/:shortCode',async (req,res) => {
     }
 });
 
-app.use('/api', require('./routes/urlRoutes'));
+app.use('/', require('./routes/urlRoutes'));
 
 
 
