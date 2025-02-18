@@ -37,22 +37,7 @@ app.get('*', (req, res) => {
 });
 
 
-app.get('/:shortCode',async (req,res) => {
-    try{
-        const {shortCode}= req.params;
-       
-        const urlData = await URL.findOne({shortCode:shortCode});
-        if(urlData){
-            console.log(urlData.originalUrl)
-            res.redirect(urlData.originalUrl);
-        }else{
-            res.status(404).send('short URL not found')
-        }
-    }catch(e){
-        console.error(e);
-        res.status(500).send('Server Error');
-    }
-});
+
 
 // Check if running locally
 if (require.main === module) {
