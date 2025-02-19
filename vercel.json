@@ -35,11 +35,12 @@
       "dest": "/frontend/public/$1"
     },
     {
-      "src": "/(.*)",
-      "dest": "/backend/server.js"
+      "handle": "filesystem"
     },
     {
-      "handle": "filesystem"
+      "src": "/(.*)",
+      "dest": "/backend/server.js"
     }
+    
   ]
 }
